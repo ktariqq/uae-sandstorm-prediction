@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────
+# UAE Sandstorm Prediction System — Config
+# ─────────────────────────────────────────
+
+paths:
+  raw_merra2: "data/raw/merra2.csv"
+  raw_ncms: "data/raw/ncms.csv"
+  processed: "data/processed/features.csv"
+  model_output: "models/sandstorm_xgb.pkl"
+  report_dir: "reports/"
+
+data:
+  timestamp_col: "timestamp"
+  target_col: "sandstorm_event"
+  test_size: 0.2
+  random_seed: 42
+
+labeling:
+  visibility_threshold: 1000.0   # meters — below this = poor visibility
+  wind_speed_threshold: 8.0      # m/s — above this = strong wind
+  require_both: true             # both conditions must be met
+
+features:
+  lag_hours: [1, 3, 6]
+  rolling_windows: [3, 6, 12]
+  cyclical_features: true
+
+model:
+  xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+    min_child_weight: 3
+    gamma: 0.1
+    reg_alpha: 0.1
+    reg_lambda: 1.0
+    objective: "binary:logistic"
+    eval_metric: "auc"
+    use_label_encoder: false
+    random_state: 42
+
+thresholds:
+  low_max: 0.30
+  medium_max: 0.60
+
+visualization:
+  theme:
+    violet: "#7F00FF"
+    deep_purple: "#2E003E"
+    lavender: "#C8A2C8"
+    plum: "#8E4585"
+    hot_pink: "#FF007F"
+    shocking_pink: "#FF4DCC"
+    dark_pink: "#C2185B"
+    soft_pink: "#F8BBD0"
+    background: "#0D0010"
+    text: "#E8D5F5"
