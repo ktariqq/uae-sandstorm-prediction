@@ -44,9 +44,6 @@ The pipeline is fully modular, end-to-end reproducible, and ships with a dark-th
 <br><br>
 
 ## 📊 Model Evaluation
-
-<div align="center">
-
 | Metric     | Value |
 |------------|-------|
 | Accuracy   | 0.9963 |
@@ -54,8 +51,8 @@ The pipeline is fully modular, end-to-end reproducible, and ships with a dark-th
 | Recall     | 0.92 (positive class) |
 | F1-Score   | 0.7333 |
 | ROC-AUC    | 0.9987 |
+<br>
 
-</div>
 <p align="center">
   <img src="reports/confusion_matrix.png" width="32%" />
   <img src="reports/roc_curve.png" width="32%" />
