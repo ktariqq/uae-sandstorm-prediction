@@ -5,6 +5,9 @@ XGBoost classifier for probabilistic sandstorm risk prediction in the UAE using 
 ![XGBoost](https://img.shields.io/badge/XGBoost-2.0-8A2BE2.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-9370DB.svg)
 ![License](https://img.shields.io/badge/License-MIT-4B0082.svg)
+<p align="center">
+  <img src="/dashboard/dashboard_example.jpg" width="500"/>
+</p>
 
 <div align="center">
 
